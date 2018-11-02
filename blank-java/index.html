@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>blank_java</title>
+    <link href="css/default.css" rel="stylesheet" />
+</head>
+<body onload="F1();">
+    <div>Content goes here!</div>
+    <script src="js/main.js"></script>
+
+    <div id="flexcontainer">
+        <h1>Projector Control Screen</h1>
+        <canvas id="graphicsView" height="400" width="500"></canvas>
+        <div class="slidecontainer">
+            <p class="words">
+                Motor 1   <input type="range" min="-100" max="100" value="0" id="slider1">   Value: <span id="result1"></span>
+                <input type="button" value="Off" class="off" id="off1" onclick="">
+            </p>
+            <p class="words">
+                Motor 2   <input type="range" min="-100" max="100" value="0" id="slider2">   Value: <span id="result2"></span>
+                <input type="button" value="Off" class="off" id="off2" onclick="">
+            </p>
+            <p class="words">
+                Motor 3   <input type="range" min="-100" max="100" value="0" id="slider3">   Value: <span id="result3"></span>
+                <input type="button" value="Off" class="off" id="off3" onclick="">
+            </p>
+            <p class="words">
+                Motor 4   <input type="range" min="-100" max="100" value="0" id="slider4">   Value: <span id="result4"></span>
+                <input type="button" value="Off" class="off" id="off4" onclick="">
+            </p>
+
+        </div>
+        <script>
+            //var slider = document.getElementById("slider1");
+            //var output = document.getElementById("result1");
+            //output.innerHTML = slider.value;
+
+            document.getElementById("slider1").oninput = function () {
+                document.getElementById("result1").innerHTML = this.value;
+            }
+            document.getElementById("slider2").oninput = function () {
+                document.getElementById("result2").innerHTML = this.value;
+            }
+            document.getElementById("slider3").oninput = function () {
+                document.getElementById("result3").innerHTML = this.value;
+            }
+
+            document.getElementById("off1").onclick = function () {
+                document.getElementById("result1").innerHTML = "0"
+                document.getElementById("slider1").value = "0"
+            }
+            document.getElementById("off2").onclick = function () {
+                document.getElementById("result2").innerHTML = "0"
+                document.getElementById("slider2").value = "0"
+            }
+            document.getElementById("off3").onclick = function () {
+                document.getElementById("result3").innerHTML = "0"
+                document.getElementById("slider3").value = "0"
+            }
+        </script>
+    </div>
+
+</body>
+</html>
+
+
