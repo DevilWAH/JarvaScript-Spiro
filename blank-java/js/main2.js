@@ -10,11 +10,11 @@ var points = [];
 function anim() {
     // For each frame check slider vlaues
     S1 = document.getElementById("slider1");
-    angm1 = S1.value / 10000;
+    angm1 = S1.value / 50000;
     S2 = document.getElementById("slider2");
-    angm2 = S2.value / 10000;
+    angm2 = S2.value / 50000;
     S3 = document.getElementById("slider3");
-    angm3 = S3.value / 10000;
+    angm3 = S3.value / 50000;
     // push new points
     makepattern();
     // remove old points
@@ -27,11 +27,12 @@ function anim() {
 
 
 function cleanoldies() {
-    var max_length = slider4.value * 3;
-    while (points.length > max_length) {
-        points.length = max_length
+
+    points.length = slider4.value * 2
+
     }
-}
+
+
 
 function draw() {
     //Here we'll only draw
@@ -56,21 +57,12 @@ function makepattern() {
     // push new points
 
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 20; i++) {
 
         ang1 = (ang1 + angm1) % 360;
         ang2 = (ang2 + angm2) % 360;
         ang3 = (ang3 + angm3) % 360;
       
-        //if (ang1 > 360) {
-        //    ang1 = (ang1 % 360)
-        //};
-        //if (ang2 > 360) {
-        //    ang2 = (ang2 - 360)
-        //};
-        //if (ang3 > 360) {
-        //    ang3 = (ang3 - 360)
-        //};
 
         var x = (Math.cos(ang1) * r1),
             y = (Math.sin(ang1) * r1),
@@ -82,7 +74,6 @@ function makepattern() {
         // store the next sections of the line       
         points.unshift(x2 + 250, y2 + 200);
 
-        
 
     }
 }
