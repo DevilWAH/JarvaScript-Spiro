@@ -52,7 +52,7 @@ function drawpatten() {
 
     // we are only going to draw to screen for each 10 points we caculate, this allows us to have finer resolutions with out the over head of writing to screen so often
 
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < 10; i++) {
 
 
     //increments the angle and reset after 360 full circle

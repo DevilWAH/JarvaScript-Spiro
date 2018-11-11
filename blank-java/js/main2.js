@@ -10,11 +10,11 @@ var points = [];
 function anim() {
     // For each frame check slider vlaues
     S1 = document.getElementById("slider1");
-    angm1 = S1.value / 50000;
+    angm1 = S1.value / 20000;
     S2 = document.getElementById("slider2");
-    angm2 = S2.value / 50000;
+    angm2 = S2.value / 20000;
     S3 = document.getElementById("slider3");
-    angm3 = S3.value / 50000;
+    angm3 = S3.value / 20000;
     // push new points
     makepattern();
     // remove old points
@@ -57,11 +57,11 @@ function makepattern() {
     // push new points
 
 
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < 10; i++) {
 
-        ang1 = (ang1 + angm1) % 360;
-        ang2 = (ang2 + angm2) % 360;
-        ang3 = (ang3 + angm3) % 360;
+        ang1 = (ang1 + angm1) % (2 * Math.PI);
+        ang2 = (ang2 + angm2) % (2 * Math.PI);
+        ang3 = (ang3 + angm3) % (2 * Math.PI);
       
 
         var x = (Math.cos(ang1) * r1),
